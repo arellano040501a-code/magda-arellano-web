@@ -1,0 +1,445 @@
+/* ==========================================
+   LECTOR · MAGDA ARELLANO
+   ========================================== */
+
+:root {
+  --reader-bg: #ffffff;
+  --reader-text: #111111;
+  --reader-muted: #666666;
+  --reader-accent: #e9a0bd;
+  --reader-line: #dddddd;
+  --reader-panel: #ffffff;
+}
+
+
+/* ==========================================
+   ESTRUCTURA GENERAL
+   ========================================== */
+
+body.reader-page {
+  margin: 0;
+  background: var(--reader-bg);
+  color: var(--reader-text);
+}
+
+
+/* ==========================================
+   ENCABEZADO
+   ========================================== */
+
+.reader-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  height: 64px;
+  padding: 0 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: var(--reader-bg);
+  border-bottom: 1px solid var(--reader-line);
+}
+
+.reader-project-link {
+  margin-left: 8px;
+
+  color: var(--reader-text);
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: color .18s ease;
+}
+
+.reader-project-link:hover {
+  color: var(--reader-accent);
+}
+
+.reader-header .reader-button[data-reader-settings] {
+  margin-left: auto;
+}
+
+.reader-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--reader-text);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.reader-button:hover {
+  background: #f5f5f5;
+}
+
+
+/* ==========================================
+   CONTENIDO LITERARIO
+   ========================================== */
+
+.reader {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 78px 0 100px;
+}
+
+.chapter-number {
+  margin: 0 0 30px;
+
+  text-align: center;
+
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+
+  color: var(--reader-text);
+}
+
+.chapter-title {
+  margin: 0 0 80px;
+
+  text-align: center;
+
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+
+/* ==========================================
+   TEXTO DE LA NOVELA
+   ========================================== */
+
+.literary-content {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.72;
+
+  text-align: justify;
+}
+
+.literary-content p {
+  margin: 0 0 1.15em;
+  text-indent: 0;
+}
+
+
+/* ==========================================
+   SEPARADOR DE ESCENA
+   ========================================== */
+
+.scene-break {
+  margin: 2.2em 0;
+
+  text-align: center;
+
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
+
+/* ==========================================
+   NAVEGACIÓN DEL CAPÍTULO
+   ========================================== */
+
+.chapter-navigation {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+
+  padding: 24px 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-top: 1px solid var(--reader-line);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.chapter-navigation a {
+  color: var(--reader-text);
+  text-decoration: none;
+}
+
+.chapter-navigation a:hover {
+  color: var(--reader-accent);
+}
+
+.chapter-navigation .nav-disabled {
+  color: var(--reader-muted);
+  opacity: .45;
+}
+
+
+/* ==========================================
+   PANELES
+   ========================================== */
+
+.reader-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+
+  width: min(360px, 86vw);
+
+  padding: 90px 28px 30px;
+
+  background: var(--reader-panel);
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  transition: transform .28s ease;
+}
+
+.reader-panel.left {
+  left: 0;
+  transform: translateX(-100%);
+
+  border-right: 1px solid var(--reader-line);
+}
+
+.reader-panel.right {
+  right: 0;
+  transform: translateX(100%);
+
+  border-left: 1px solid var(--reader-line);
+}
+
+.reader-panel.open {
+  transform: translateX(0);
+}
+
+.reader-panel h2 {
+  margin: 0 0 24px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   FONDO OSCURECIDO
+   ========================================== */
+
+.reader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+
+  background: rgba(0, 0, 0, .22);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity .28s ease, visibility .28s ease;
+}
+
+.reader-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================
+   BOTÓN CERRAR DEL PANEL
+   ========================================== */
+
+.reader-panel-close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: var(--reader-text);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.reader-panel-close:hover {
+  color: var(--reader-accent);
+}
+
+/* ==========================================
+   CAPÍTULO ACTUAL
+   ========================================== */
+
+.reader-index-list .current {
+  color: var(--reader-accent);
+  font-weight: 600;
+}
+
+.reader-panel button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================
+   ÍNDICE DE CAPÍTULOS
+   ========================================== */
+
+.reader-index-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.reader-index-list a {
+  padding: 13px 0;
+
+  color: var(--reader-text);
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--reader-line);
+}
+
+.reader-index-list a:hover {
+  color: var(--reader-accent);
+}
+
+
+/* ==========================================
+   CONFIGURACIÓN
+   ========================================== */
+
+.reader-settings-option {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.reader-settings-option button {
+  padding: 9px 14px;
+
+  border: 1px solid var(--reader-line);
+  border-radius: 6px;
+
+  background: var(--reader-bg);
+  color: var(--reader-text);
+
+  cursor: pointer;
+}
+
+.reader-settings-option button:hover {
+  border-color: var(--reader-accent);
+}
+
+
+/* ==========================================
+   FONDO OSCURO
+   ========================================== */
+
+body.reader-dark {
+  --reader-bg: #151515;
+  --reader-text: #eeeeee;
+  --reader-muted: #999999;
+  --reader-line: #3a3a3a;
+  --reader-panel: #1c1c1c;
+}
+
+body.reader-dark .reader-button:hover {
+  background: #252525;
+}
+
+body.reader-dark .reader-settings-option button:hover {
+  background: #252525;
+}
+
+
+/* ==========================================
+   MÓVIL
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .reader-header {
+    height: 58px;
+    padding: 0 16px;
+  }
+
+  .reader-button {
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+  }
+
+  .reader {
+    width: min(100% - 32px, 760px);
+    padding: 58px 0 70px;
+  }
+
+  .chapter-number {
+    margin-bottom: 24px;
+    font-size: 1.3rem;
+  }
+
+  .chapter-title {
+    margin-bottom: 60px;
+    font-size: 1.45rem;
+  }
+
+  .literary-content {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  .scene-break {
+    margin: 2em 0;
+  }
+
+  .chapter-navigation {
+    width: min(100% - 32px, 760px);
+    padding-bottom: 28px;
+  }
+
+}
+
+/* ==========================================
+   ENLACE A LA NOVELA
+   ========================================== */
+
+.reader-project-link {
+  color: var(--reader-text);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reader-project-link:hover {
+  color: var(--reader-accent);
+}
