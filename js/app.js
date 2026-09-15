@@ -298,7 +298,11 @@ if (primerCapitulo) {
 
     <div class="info-card">
   <b>Capítulos</b>
-  <span>${cantidadPublicados}</span>
+  <span>${
+    proyecto.tipo === "Relato" && cantidadPublicados === 1
+      ? "Único"
+      : cantidadPublicados
+  }</span>
 </div>
 
   </div>
@@ -421,9 +425,19 @@ if (arcos.length > 0) {
           >
             <div>
 
-              <small>
-                Capítulo ${String(capitulo.numero).padStart(2, "0")}
-              </small>
+              ${
+  capitulo.etiqueta
+    ? `
+      <small>
+        ${esc(
+          capitulo.etiqueta === "Capítulo"
+            ? `Capítulo ${String(capitulo.numero).padStart(2, "0")}`
+            : capitulo.etiqueta
+        )}
+      </small>
+    `
+    : ""
+}
 
               <strong>
                 ${esc(capitulo.titulo)}
@@ -548,8 +562,8 @@ capitulosHTML += `
             <h2>Sinopsis</h2>
 
             <p class="synopsis">
-              ${esc(proyecto.sinopsis)}
-            </p>
+  ${esc(proyecto.sinopsis).replace(/\n\n/g, "</p><p class=\"synopsis\">")}
+</p>
 
           </section>
         `
