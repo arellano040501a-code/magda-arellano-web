@@ -329,12 +329,14 @@ document.addEventListener("DOMContentLoaded", () => {
         capitulo.numero
       ).padStart(2, "0")}`;
 
-  } else {
+  } else if (capitulo.etiqueta) {
 
     numeroElemento.textContent =
-      capitulo.etiqueta || String(
-        capitulo.numero
-      ).padStart(2, "0");
+      capitulo.etiqueta;
+
+  } else {
+
+    numeroElemento.textContent = "";
 
   }
 
