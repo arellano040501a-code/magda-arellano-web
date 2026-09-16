@@ -4,7 +4,7 @@ const proyectos = [
     id: "aedr",
     titulo: "A veces es difícil respirar",
     tipo: "Novela",
-    estado: "En curso",
+    estado: "Próximamente",
     clasificacion: "+18",
     genero: "Drama",
 
@@ -24,14 +24,7 @@ const proyectos = [
     agregada: "2026-08-27",
     actualizada: "27 de agosto de 2026",
 
-    capitulosPublicados: [
-  {
-    numero: 1,
-    etiqueta: "Capítulo",
-    titulo: "La cubeta",
-    url: "lectura/aedr/capitulo-01.html"
-  }
-],
+    capitulosPublicados: [],
 
     arcos: [
       {
@@ -73,79 +66,105 @@ const proyectos = [
   },
 
   {
-    id: "sldp",
-    titulo: "Suave luz de primavera",
-    tipo: "Novela",
-    estado: "En curso",
-    clasificacion: null,
-    genero: "Drama histórico",
-    capitulos: 0,
-
-    portada: "",
-
-    frase: "Una historia de amor, memoria y pertenencia en tiempos de cambio.",
-
-    etiquetas: [
-      "Histórica",
-      "Romance",
-      "Colonial"
-    ],
-
-    sinopsis: "",
-
-    ficha: "proyecto.html?id=sldp"
-  },
-
-  {
     id: "atrapada",
     titulo: "Atrapada",
     tipo: "Relato",
-    estado: "Disponible",
+    estado: "Finalizado",
     clasificacion: null,
-    genero: "Drama",
-    capitulos: 1,
+    genero: "Aventura",
 
-    portada: "",
+    portada: "images/atrapada.png",
+
     frase: "",
-    etiquetas: [],
-    sinopsis: "",
+    etiquetas: [
+        "Realidad alterna",
+        "Escocia",
+        "Viajes en el tiempo",
+        "Histórico",
+    ],
 
-    ficha: "proyecto.html?id=atrapada"
-  },
+    sinopsis: "Después de quedarse dormida frente al televisor, Andrea Montero despierta en un bosque helado del que no sabe cómo salir. Sin señales de su hogar, sin ropa adecuada para sobrevivir al frío y sin una explicación lógica para lo que está ocurriendo, solo le queda avanzar con la esperanza de encontrar ayuda. Cuando un misterioso jinete pelirrojo la rescata de una muerte casi segura, Andrea descubre que ha caído en un mundo que solo creía conocer a través de la ficción. Un lugar donde las armas de pólvora, los caballos y las viejas costumbres pertenecen al día a día… y donde cada decisión puede costarle la vida. Perdida entre dos épocas y obligada a confiar en un desconocido de intensos ojos azules, Andrea deberá averiguar cómo llegó hasta allí y si existe una forma de regresar a casa… antes de que ese pasado termine por atraparla para siempre.",
 
-  {
-    id: "corazon",
+    ficha: "proyecto.html?id=atrapada",
+    agregada: "2025-05-11",
+    actualizada: "14 de septiembre de 2026",
+
+    capitulosPublicados: [
+        {
+            numero: 1,
+            etiqueta: "",
+            titulo: "Atrapada",
+            url: "lectura/atrapada/capitulounico.html"
+        }
+    ],
+},
+
+{
+    id: "eecnsg",
     titulo: "En el corazón no se gobierna",
     tipo: "Relato",
-    estado: "Disponible",
-    clasificacion: null,
+    estado: "Finalizado",
+    clasificacion: "+18",
     genero: "Drama",
-    capitulos: 1,
 
-    portada: "",
+    portada: "images/eecnsg.png",
+
     frase: "",
-    etiquetas: [],
+    etiquetas: [
+        "Infidelidad",
+        "Celos enfermizos",
+        "Miedo",
+        "Resentimiento",
+    ],
 
-    sinopsis: "",
+    sinopsis: "Fernando Arteaga juró que nunca volvería a suplicar por el amor de su esposa. Sin embargo, cada noche, la soledad de una casa que antes estuvo llena de risas le recuerda que olvidar a Griselda es una batalla perdida.\n\nMientras ella intenta reconstruir un matrimonio quebrado por una traición que aún pesa entre ambos, Fernando libra una guerra silenciosa contra el resentimiento, el orgullo y un amor que se niega a morir. Porque hay heridas que el tiempo no cierra, silencios que lastiman más que cualquier palabra y caricias capaces de reabrir todas las cicatrices.\n\nEntre el deseo, la culpa y el miedo a perderse para siempre, ambos descubrirán que perdonar puede ser mucho más difícil que amar… y que, cuando el corazón insiste en aferrarse a alguien, no siempre existe la libertad de dejarlo ir.",
 
-    ficha: "proyecto.html?id=corazon"
-  },
+    ficha: "proyecto.html?id=eecnsg",
+    agregada: "2024-12-24",
+    actualizada: "14 de septiembre de 2026",
 
-  {
+    capitulosPublicados: [
+        {
+            numero: 1,
+            etiqueta: "",
+            titulo: "En el corazón no se gobierna",
+            url: "lectura/eecnsg/capitulounico.html"
+        }
+    ],
+},
+
+{
     id: "siij",
     titulo: "Síij",
     tipo: "Relato",
-    estado: "Disponible",
+    estado: "Finalizado",
     clasificacion: null,
-    genero: "Drama",
-    capitulos: 1,
+    genero: "Histórico",
 
-    portada: "",
+    portada: "images/siij.png",
+
     frase: "",
-    etiquetas: [],
-    sinopsis: "",
+    etiquetas: [
+        "Secretismo",
+        "Colonias",
+        "Fantasía",
+        "Miedo",
+    ],
 
-    ficha: "proyecto.html?id=siij"
-  }
+    sinopsis: "Tras ser rescatada junto a su hijo por un pueblo al que toda su vida le enseñaron a temer, Pilar comienza a descubrir que la verdad rara vez se parece a las historias con las que fue criada. Mientras sana de sus heridas y presencia las costumbres de quienes la acogieron, las certezas que la sostuvieron desde niña empiezan a desmoronarse.\n\nLa víspera de abandonar aquellas tierras, el enigmático ts’ak yaj que ha cuidado de su recuperación la conduce a un antiguo santuario para participar en un misterioso tributo. Entre plegarias ancestrales, silencios cargados de significado y una cercanía que ninguno de los dos puede explicar, Pilar comprenderá que algunos encuentros tienen el poder de cambiar el rumbo de una vida.\n\nPorque hay caminos que no comienzan cuando damos el primer paso, sino cuando nuestro corazón reconoce un destino que la razón todavía se niega a aceptar.",
+
+    ficha: "proyecto.html?id=siij",
+    agregada: "2025-12-27",
+    actualizada: "14 de septiembre de 2026",
+
+    capitulosPublicados: [
+        {
+            numero: 1,
+            etiqueta: "",
+            titulo: "Síij",
+            url: "lectura/siij/capitulounico.html"
+        }
+    ],
+}
 
 ];
