@@ -165,6 +165,101 @@ const proyectos = [
             url: "lectura/siij/capitulounico.html"
         }
     ],
+},
+
+{
+    id: "yqa",
+    titulo: "Yo quisiera amarte",
+    tipo: "Novela",
+    estado: "Finalizado",
+    clasificacion: "+18",
+    genero: "Melodrama",
+
+    portada: "images/yqa.png",
+
+    frase: "",
+    etiquetas: [
+        "Romance",
+        "Malos entendidos",
+        "Orgullo",
+        "Infidelidad",
+        "Confesiones",
+    ],
+
+    sinopsis: "Verónica fue obligada a casarse con un hombre que apenas conocía. Tras años de convivencia monótona la esperanza de ser libre resurge, pero, ¿no será tarde para entregarse a quien toda la vida ha amado? Y de ser tarde, ¿estará dispuesta a vivir en soledad o volverá a los brazos del único que siempre la ha sostenido?\n\nLa carrera de Ernesto despegó demasiado tarde, cuando ya no podía tenerla. Aún así, continuó en el mismo sendero que ella sin que se diera cuenta, por desgracia el peso de los años comienzan a hacerle creer que jamás podrá recuperarla. ¿Será momento de dejar de vivir en el pasado y comenzar a enfocarse en sí mismo?",
+
+    ficha: "proyecto.html?id=yqa",
+    agregada: "2025-05-11",
+    actualizada: "17 de septiembre de 2026",
+
+    capitulosPublicados: [
+        {
+            numero: 1,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-1.html"
+        },
+        {
+            numero: 2,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-2.html"
+        },
+        {
+            numero: 3,
+            etiqueta: "Capítulo",
+            titulo: "Ernesto",
+            url: "lectura/yqa/capitulo-3.html"
+        },
+        {
+            numero: 4,
+            etiqueta: "Capítulo",
+            titulo: "Ernesto",
+            url: "lectura/yqa/capitulo-4.html"
+        },
+        {
+            numero: 5,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-5.html"
+        },
+        {
+            numero: 6,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-6.html"
+        },
+        {
+            numero: 7,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-7.html"
+        },
+        {
+            numero: 8,
+            etiqueta: "Capítulo",
+            titulo: "Ernesto",
+            url: "lectura/yqa/capitulo-8.html"
+        },
+        {
+            numero: 9,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-9.html"
+        },
+        {
+            numero: 10,
+            etiqueta: "Capítulo",
+            titulo: "Verónica",
+            url: "lectura/yqa/capitulo-10.html"
+        },
+        {
+            numero: 11,
+            etiqueta: "Epílogo",
+            titulo: "Ernesto",
+            url: "lectura/yqa/capitulo-epilogo.html"
+        }
+    ],
 }
 
 ];
