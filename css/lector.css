@@ -443,3 +443,9 @@ body.reader-dark .reader-settings-option button:hover {
 .reader-project-link:hover {
   color: var(--reader-accent);
 }
+
+.disqus-comments {
+  max-width: 900px;
+  margin: 70px auto 0;
+  padding: 0 20px 60px;
+}
