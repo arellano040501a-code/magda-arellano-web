@@ -486,4 +486,47 @@ return `
 
   }
 
+  /* ==========================================
+   DISQUS · COMENTARIOS
+   ========================================== */
+
+const contenedorDisqus = document.createElement("section");
+
+contenedorDisqus.className = "disqus-comments";
+
+contenedorDisqus.innerHTML = `
+  <div id="disqus_thread"></div>
+`;
+
+const navegacionCapitulo = document.querySelector(
+  ".chapter-navigation"
+);
+
+if (navegacionCapitulo) {
+  navegacionCapitulo.insertAdjacentElement(
+    "afterend",
+    contenedorDisqus
+  );
+
+  window.disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier =
+      `${proyectoId}-capitulo-${capituloActual}`;
+  };
+
+  const scriptDisqus = document.createElement("script");
+
+  scriptDisqus.src =
+    "https://magda-arellano.disqus.com/embed.js";
+
+  scriptDisqus.setAttribute(
+    "data-timestamp",
+    +new Date()
+  );
+
+  (document.head || document.body).appendChild(
+    scriptDisqus
+  );
+}
+
 });
