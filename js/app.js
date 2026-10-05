@@ -147,6 +147,269 @@ if (tarjeta) {
   prepararCarrusel("novelas-home", "Novela");
   prepararCarrusel("relatos-home", "Relato");
 
+    // ==========================================
+  // ACTUALIZACIONES — CARRUSEL DE BANNERS
+  // ==========================================
+
+  prepararActualizaciones();
+
+
+  function prepararActualizaciones() {
+
+    const track = document.querySelector(".updates-track");
+    const dots = document.querySelector(".updates-dots");
+
+    if (!track || !dots) return;
+
+
+    // ------------------------------------------
+    // BANNERS
+    // ------------------------------------------
+
+    const actualizaciones = [
+
+      {
+        imagen: "images/actualizaciones/banneraedr.jpg",
+        enlace: "proyecto.html?id=aedr",
+        alt: "Próximo lanzamiento"
+      },
+
+      {
+        imagen: "images/actualizaciones/bannerextra.jpg",
+        enlace: "https://substack.com/@magdaaauhes",
+        alt: "Actualización de Magda Arellano"
+      },
+
+      {
+        imagen: "images/actualizaciones/bannerrelatos.jpg",
+        enlace: "https://arellano040501a-code.github.io/magda-arellano-web/relatos",
+        alt: "Promoción recurrente"
+      }
+
+    ];
+
+
+    // Si no hay banners, no hacemos nada.
+    if (!actualizaciones.length) return;
+
+
+    // ------------------------------------------
+    // CREAR BANNERS
+    // ------------------------------------------
+
+    track.innerHTML = actualizaciones
+      .map((actualizacion, index) => {
+
+        return `
+          <div
+            class="updates-slide ${index === 0 ? "is-active" : ""}"
+            data-slide="${index}"
+          >
+
+            <a
+              href="${esc(actualizacion.enlace)}"
+              aria-label="${esc(actualizacion.alt)}"
+            >
+
+              <img
+                src="${esc(actualizacion.imagen)}"
+                alt="${esc(actualizacion.alt)}"
+                ${index === 0 ? "" : "loading=\"lazy\""}
+              >
+
+            </a>
+
+          </div>
+        `;
+
+      })
+      .join("");
+
+
+    // ------------------------------------------
+    // CREAR INDICADORES
+    // ------------------------------------------
+
+    dots.innerHTML = actualizaciones
+      .map((actualizacion, index) => {
+
+        return `
+          <button
+            type="button"
+            class="updates-dot ${index === 0 ? "is-active" : ""}"
+            data-slide="${index}"
+            aria-label="Ver actualización ${index + 1}"
+          ></button>
+        `;
+
+      })
+      .join("");
+
+
+    const slides = [
+      ...track.querySelectorAll(".updates-slide")
+    ];
+
+    const indicadores = [
+      ...dots.querySelectorAll(".updates-dot")
+    ];
+
+    const anterior = document.querySelector(".updates-prev");
+    const siguiente = document.querySelector(".updates-next");
+
+
+    let actual = 0;
+    let intervalo;
+
+
+    // ------------------------------------------
+    // MOSTRAR SLIDE
+    // ------------------------------------------
+
+    function mostrarSlide(indice) {
+
+      if (!slides.length) return;
+
+      actual =
+        (indice + slides.length) % slides.length;
+
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle(
+          "is-active",
+          i === actual
+        );
+      });
+
+
+      indicadores.forEach((dot, i) => {
+        dot.classList.toggle(
+          "is-active",
+          i === actual
+        );
+      });
+
+    }
+
+
+    // ------------------------------------------
+    // SIGUIENTE / ANTERIOR
+    // ------------------------------------------
+
+    function siguienteSlide() {
+      mostrarSlide(actual + 1);
+    }
+
+
+    function anteriorSlide() {
+      mostrarSlide(actual - 1);
+    }
+
+
+    // ------------------------------------------
+    // BOTONES
+    // ------------------------------------------
+
+    if (siguiente) {
+      siguiente.addEventListener(
+        "click",
+        () => {
+
+          siguienteSlide();
+          reiniciarIntervalo();
+
+        }
+      );
+    }
+
+
+    if (anterior) {
+      anterior.addEventListener(
+        "click",
+        () => {
+
+          anteriorSlide();
+          reiniciarIntervalo();
+
+        }
+      );
+    }
+
+
+    // ------------------------------------------
+    // INDICADORES
+    // ------------------------------------------
+
+    indicadores.forEach((dot, index) => {
+
+      dot.addEventListener(
+        "click",
+        () => {
+
+          mostrarSlide(index);
+          reiniciarIntervalo();
+
+        }
+      );
+
+    });
+
+
+    // ------------------------------------------
+    // CAMBIO AUTOMÁTICO
+    // ------------------------------------------
+
+    function iniciarIntervalo() {
+
+      intervalo = setInterval(
+        siguienteSlide,
+        6000
+      );
+
+    }
+
+
+    function reiniciarIntervalo() {
+
+      clearInterval(intervalo);
+      iniciarIntervalo();
+
+    }
+
+
+    // ------------------------------------------
+    // PAUSAR AL PASAR EL RATÓN
+    // ------------------------------------------
+
+    const carrusel =
+      document.querySelector(".updates-carousel");
+
+
+    if (carrusel) {
+
+      carrusel.addEventListener(
+        "mouseenter",
+        () => clearInterval(intervalo)
+      );
+
+
+      carrusel.addEventListener(
+        "mouseleave",
+        () => iniciarIntervalo()
+      );
+
+    }
+
+
+    // ------------------------------------------
+    // INICIAR
+    // ------------------------------------------
+
+    mostrarSlide(0);
+    iniciarIntervalo();
+
+  }
+
   // PÁGINAS NOVELAS / RELATOS
   const grid = document.getElementById("project-grid");
   if (!grid) return;

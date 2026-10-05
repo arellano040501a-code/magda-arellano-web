@@ -6,63 +6,28 @@ const proyectos = [
     tipo: "Novela",
     estado: "Próximamente",
     clasificacion: "+18",
-    genero: "Drama",
+    genero: "Ficción Literaria Contemporánea",
 
-    portada: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtzlYMffi05ADs3oowkRykmzhImkuV6tWLCTZ-tiQTKAII7p4iwc4qfYxM8sVpU3dO4mJD1KrNKekF4MxJ8kgOWRCAfmDs22iXvsOTW1aziagZ_lA9e1aLGaXIrzrEhHTVnTUMcL2TMcC8Ot5b3IqFmshE1X0vLAtpnjvAa9TSSAM70CG1lHMo5uCFKto/s1537/A%20veces%20es%20difi%CC%81cil%20respirar.PNG",
+    portada: "images/aedr.jpg",
 
-    frase: "La justicia es un privilegio que pocos pueden pagar. ¿Tú estarías dispuesto a luchar por ella?",
+    frase: "La justicia es un privilegio que pocos pueden pagar.",
 
     etiquetas: [
       "Slow burn",
       "Ciudad pequeña",
-      "Abuso y trauma"
+      "Abuso y trauma",
+      "Thriller psicológico",
+      "Novela negra social",
+      "Bildungsroman",
     ],
 
-    sinopsis: "Andrea, una joven marcada por el abandono y la violencia, intenta sostener su vida junto a su padre mientras enfrenta el acoso de un entorno corrupto. Cuando la justicia falla y su mundo comienza a desmoronarse, la pérdida de su padre la empuja a un límite donde sobrevivir deja de ser suficiente. Obligada a enfrentarse a aquello que la destruyó, Andrea descubrirá que cruzar esa línea tiene un costo del que no se regresa.",
+    sinopsis: "Tras la muerte de su padre, Andrea, víctima de hostigamiento y agresión, queda a merced de un hombre, hijo de fiscal, empeñado en convertirla en objeto de su obsesión; cuando las instituciones encargadas de velar por la seguridad ciudadana no pueden garantizarle ninguna protección —o no están dispuestas—, ella deberá defender por sí misma su vida y su libertad.",
 
     ficha: "proyecto.html?id=aedr",
     agregada: "2026-08-27",
-    actualizada: "27 de agosto de 2026",
+    actualizada: "04 de octubre de 2026",
 
     capitulosPublicados: [],
-
-    arcos: [
-      {
-        nombre: "Entre el esfuerzo y la imprudencia, la determinación",
-        desde: 1,
-        hasta: 11
-      },
-      {
-        nombre: "Entre la curiosidad y la turbación, el golpe de realidad",
-        desde: 12,
-        hasta: 22
-      },
-      {
-        nombre: "Entre el recuerdo y el alivio, la condena",
-        desde: 23,
-        hasta: 33
-      },
-      {
-        nombre: "Entre el futuro y la dulzura, la inevitabilidad",
-        desde: 34,
-        hasta: 45
-      },
-      {
-        nombre: "Muerte al maniquí",
-        desde: 46,
-        hasta: 53
-      },
-      {
-        nombre: "Anoche te lloré",
-        desde: 54,
-        hasta: 64
-      },
-      {
-        nombre: "No hay mal que dure cien años",
-        desde: 65,
-        hasta: 78
-      }
-    ]
   },
 
   {
